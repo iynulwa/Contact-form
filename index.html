@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+
+  <title>Frontend Mentor | Contact form</title>
+
+</head>
+<body>
+
+  <main>
+    <h1>Contact Us</h1>
+    <form>
+      <div class="name-container">
+        <div>
+          <label for="firstname">First Name</label><br>
+          <input id="firstname" type="text">
+          <p class="error" hidden>This field is required</p><br>
+        </div>
+        <div>
+          <label for="lastname">Last Name</label><br>
+          <input id="lastname" type="text">
+          <p class="error" hidden>This field is required</p><br>
+        </div>
+      </div>
+
+      <label for="email">Email Address</label><br>
+      <input id="email" type="email">
+      <p>
+        <span class="email-error"hidden>Please enter a valid email address</span>
+        <span class="error" hidden>This field is required</span>
+      </p><br>
+
+      <p>Query Type</p>
+      <div class="query-container">
+        <div class="query-type">
+          <input id="enquiry" type="radio" name="query" value="enquiry">
+          <label for="enquiry">General Enquiry</label>
+        </div>
+        <div class="query-type">
+          <input id="request" type="radio" name="query" value="request">
+          <label for="request">Support Request</label>
+        </div>      
+        <p class="error" hidden>Please select a query type</p><br>
+      </div>
+
+      
+      <label for="message">Message</label><br>
+      <textarea id="message" name="message" rows="5" cols="30"></textarea><br>
+      <p class="error" hidden>This field is required</p>
+      
+      <div class="consent-div">
+        <input id="consent" type="checkbox">
+        <label for="consent">I consent to being contacted by the team</label>
+        <p class="error" hidden>To submit this form, please consent to being contacted</p><br>
+      </div>
+
+      <input class="submit" type="submit" value="Submit" >
+    </form>
+    
+  </main>
+
+  <div class="pop-up" hidden>
+    <img src="./assets/images/icon-success-check.svg" alt="icon success check">
+    <p>Message Sent!</p>
+    <p>Thanks for completing the form. We'll be in touch soon!</p> 
+  </div>
+
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+  <script src="script.js"></script>
+</body>
+</html>
