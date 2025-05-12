@@ -96,6 +96,10 @@ main > * {
     margin: 1rem;
 }
 
+.error {
+    color: var(--Red);
+}
+
 input, textarea {
     width: 100%;
     padding: 0.7rem;
@@ -115,12 +119,16 @@ input, textarea {
 
 .query-type {
     display: flex;
-    gap: 1rem;
+    gap: 0.5rem;
     align-items: center;
     border: var(--Grey-500-medium) solid 1px;
     margin: 0.8rem 0;
     padding: 0.7rem;
     border-radius: 0.3rem;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .query-type > input {
@@ -130,12 +138,13 @@ input, textarea {
 
     &:focus {
         outline: 0;
+        color: var(--Green-600-medium);
     }
 }
 
 .consent-div {
     display: flex;
-    gap: 1rem;
+    gap: 0.5rem;
     align-items: center;
     padding: 0.7rem;
     border-radius: 0.3rem;
@@ -151,7 +160,7 @@ input, textarea {
     }
 }
 
-.submit {
+#submit {
     background-color: var(--Green-600-medium);
     color: var(--White);
     border: none;
@@ -173,6 +182,7 @@ input, textarea {
     border-radius: 1rem;
     max-width: 27rem;
     height: auto;
+    visibility: hidden;
 }
 
 .pop-up p:nth-child(2) {
@@ -185,16 +195,26 @@ input, textarea {
     font-weight: 200;
 }
 
-@media (min-width: 430px) {
+@media (min-width: 665px) {
     main {
         width: 55rem;
     }
 
     .query-container {
         display: flex;
+        gap: 1rem;
+    }
+
+    .query-type {
+        width: 17.5rem;
     }
 
     .name-container {
         display: flex;
+        gap: 1rem;
+    }
+
+    .name-container > div > input {
+        width: 17.5rem;
     }
 }
