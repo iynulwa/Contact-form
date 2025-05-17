@@ -12,62 +12,66 @@
 </head>
 <body>
 
-  <div class="pop-up">
-    <img src="./assets/images/icon-success-check.svg" alt="icon success check">
-    <p>Message Sent!</p>
-    <p>Thanks for completing the form. We'll be in touch soon!</p> 
+  <div id="pop-up" class="pop-up">
+      <img src="./assets/images/icon-success-check.svg" alt="icon success check">
+      <h2>Message Sent!</h2>
+      <p>Thanks for completing the form. We'll be in touch soon!</p> 
   </div>
 
   <main>
     <h1>Contact Us</h1>
-    <form>
+    <form novalidate>
       <div class="name-container">
         <div>
-          <label for="firstname">First Name</label><br>
-          <input id="firstname" type="text">
-          <p class="error" hidden>This field is required</p><br>
+          <label for="firstname">First Name <span class="required">*</span></label><br>
+          <input id="firstname" type="text" required>
+          <span class="error" id="fnerror" hidden>This field is required</span>
         </div>
         <div>
-          <label for="lastname">Last Name</label><br>
-          <input id="lastname" type="text">
-          <p class="error" hidden>This field is required</p><br>
+          <label for="lastname">Last Name <span class="required">*</span></label><br>
+          <input id="lastname" type="text" required>
+          <span class="error" id="lnerror" hidden>This field is required</span>
         </div>
       </div>
 
-      <label for="email">Email Address</label><br>
-      <input id="email" type="email">
-      <p>
-        <span class="email-error"hidden>Please enter a valid email address</span>
-        <span class="error" hidden>This field is required</span>
-      </p>
+      <div>
+        <label for="email">Email Address <span class="required">*</span></label><br>
+        <input id="email" type="email" required>
+        <span class="error" id="email-error"hidden>Please enter a valid email address</span>
+        <span class="error" id="mail-error" hidden>This field is required</span>
+      </div>
 
-      <p>Query Type</p>
-      <div class="query-container">
-        <div class="query-type">
-          <input id="enquiry" type="radio" name="query" value="enquiry">
-          <label for="enquiry">General Enquiry</label>
+      <div>
+        <p>Query Type <span class="required">*</span></p>
+        <div class="query-container">
+          <div class="query-type">
+            <input id="enquiry" type="radio" name="query" value="enquiry" required>
+            <label for="enquiry">General Enquiry</label>
+          </div>
+          <div class="query-type">
+            <input id="request" type="radio" name="query" value="request">
+            <label for="request">Support Request</label>
+          </div>
         </div>
-        <div class="query-type">
-          <input id="request" type="radio" name="query" value="request">
-          <label for="request">Support Request</label>
-        </div>      
-        <p class="error" hidden>Please select a query type</p><br>
+        <span class="error" id="query-error" hidden>Please select a query type</span>
       </div>
 
-      
-      <label for="message">Message</label><br>
-      <textarea id="message" name="message" rows="5" cols="30"></textarea><br>
-      <p class="error" hidden>This field is required</p>
-      
-      <div class="consent-div">
-        <input id="consent" type="checkbox">
-        <label for="consent">I consent to being contacted by the team</label>
-        <p class="error" hidden>To submit this form, please consent to being contacted</p><br>
+      <div>
+        <label for="message">Message <span class="required">*</span></label><br>
+        <textarea id="message" name="message" rows="5" cols="30" required></textarea><br>
+        <span class="error" id="message-error" hidden>This field is required</span>
       </div>
-
-      <input id="submit" type="submit" value="Submit" >
+      
+      <div>
+        <div class="consent-div">
+          <input id="consent" type="checkbox" required>
+          <label for="consent">I consent to being contacted by the team</label><br>
+        </div>
+        <span class="error" id="consent-error" hidden>To submit this form, please consent to being contacted</span><br>
+      </div>
+      
+      <input id="submit" type="submit" value="Submit">
     </form>
-    
   </main>
 
   <!-- <div class="attribution">

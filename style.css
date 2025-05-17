@@ -86,6 +86,7 @@ textarea:not([rows]) {
 }
 
 main {
+    margin-top: 3rem;
     max-width: 40rem;
     background-color: var(--White);
     padding: 1rem;
@@ -96,15 +97,26 @@ main > * {
     margin: 1rem;
 }
 
+.name-container > div {
+    margin-bottom: 1.3rem;
+}
+
+form > div {
+    margin-bottom: 1.3rem;
+}
+
 .error {
     color: var(--Red);
+}
+
+.required {
+  color: var(--Green-600-medium);
+  font-weight: 800;
 }
 
 input, textarea {
     width: 100%;
     padding: 0.7rem;
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
     border: 1px solid var(--Grey-500-medium);
     border-radius: 0.3rem;
 
@@ -146,7 +158,6 @@ input, textarea {
     display: flex;
     gap: 0.5rem;
     align-items: center;
-    padding: 0.7rem;
     border-radius: 0.3rem;
 }
 
@@ -172,7 +183,9 @@ input, textarea {
 }
 
 .pop-up {
-    display: flex;
+    position: absolute;
+    top: 1rem;
+    display: none;
     align-items: center;
     flex-wrap: wrap;
     gap: 0.5rem;
@@ -182,11 +195,11 @@ input, textarea {
     border-radius: 1rem;
     max-width: 27rem;
     height: auto;
-    visibility: hidden;
+    
 }
 
-.pop-up p:nth-child(2) {
-    font-size: 0.9rem;
+.pop-up :nth-child(2) {
+    font-size: 1.2rem;
     font-weight: 700;
 }
 
@@ -198,6 +211,10 @@ input, textarea {
 @media (min-width: 665px) {
     main {
         width: 55rem;
+    }
+
+    .name-container > div {
+    margin-bottom: 0;
     }
 
     .query-container {
